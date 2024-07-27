@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        box-sizing: border-box;
+        margin:0;
+        padding:0;
+    }
+
+    .box {
+        height: 500px;
+        width: 500px;
+        margin: auto;
+        box-sizing: border-box;
+        border: 1px solid black;
+        justify-content: center;
+        padding: 20px;
+        overflow: hidden;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 10px;
+  
+    }
+
+    button {
+        border: 2px solid black;
+        margin: 5px;
+        padding: 8px;
+        width: 40%;
+        cursor: pointer;
+    }
+
+    button:hover {
+    background-color: #f0f0f0;
+    }
+
+    .dropdown {
+        border: 2px solid black;
+        width: 60%;
+        margin: 0px;
+        padding: 0px;
+        display: inline-block;
+        position: relative;
+    }
+
+    select {
+        border: none;
+        padding: 9px 0px;
+        width: 100%;
+    }
+
+    select:focus {
+        outline: none;
+    }
+    .color {
+        height: 20px;
+        width: 20px;
+        border: 2px solid black;
+        display: inline-block;
+        border-radius: 200px;
+        margin:5px;
+        cursor: pointer;
+    }
+
+    #red {
+        background-color: red;
+    }
+
+    #blue {
+        background-color: blue;
+    }
+
+    #green {
+        background-color: green;
+    }
+
+    #purple {
+        background-color: purple;
+    }
+    h1{
+        color: red;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<body id="bo">
+    <div class="box" id="mybox">
+        <h3>select your domain :</h3>
+        <div class="dropdown">
+            <label for="domain" id="domain"></label>
+            <select name="language" id="select">
+                <option value="">--Make a choise--</option>
+                <option value="React" class="option">React</option>
+                <option value="Django">Django</option>
+                <option value="Angular">Angular</option>
+                <option value="Aws">Aws</option>
+            </select>
+        </div>
+        <br><br>
+        <div class="color" id="red"></div>
+        <div class="color" id="blue"></div>
+        <div class="color" id="green"></div>
+        <div class="color" id="purple"></div>
+
+        <p id="paraReact" class="hidden">React is a JavaScript library for building user interfaces. It is maintained by
+            Facebook and a community of individual developers and companies.</p>
+        <p id="paraDjango" class="hidden">Django is a high-level Python web framework that encourages rapid development
+            and clean, pragmatic design. It is maintained by the Django Software Foundation.</p>
+        <p id="paraAngular" class="hidden">Angular is a platform for building mobile and desktop web applications. It is
+            maintained by Google and a community of individual developers and companies.</p>
+        <p id="paraAws" class="hidden">AWS (Amazon Web Services) is a comprehensive, evolving cloud computing platform
+            provided by Amazon. It offers a mix of IaaS, PaaS, and SaaS services.</p>
+
+        <button id="uppercase">Uppercase</button>
+        <button id="lowercase">lowercase</button>
+        <button id="inc">+</button>
+        <button id="dec">-</button>
+        <input type="color" id="color">
+        <input type="range" id="range">
+    </div>
+    <script>
+        document.getElementById("red").onclick = function () {
+            document.getElementById("bo").style.backgroundColor = "red"
+        }
+
+        document.getElementById("blue").onclick = function () {
+            document.getElementById("bo").style.backgroundColor = "blue"
+        }
+
+        document.getElementById("green").onclick = function () {
+            document.getElementById("bo").style.backgroundColor = "green"
+        }
+
+        document.getElementById("purple").onclick = function () {
+            document.getElementById("bo").style.backgroundColor = "purple"
+        }
+
+        document.getElementById("uppercase").onclick = function () {
+            document.getElementById("bo").style.textTransform = "uppercase"
+        }
+
+        document.getElementById("lowercase").onclick = function () {
+            document.getElementById("bo").style.textTransform = "lowercase"
+        }
+
+        let counter = 16;
+        document.getElementById("inc").onclick = function () {
+            counter++;
+            console.log(counter + "px")
+            document.getElementById("mybox").style.fontSize = counter + "px"
+        }
+        document.getElementById("dec").onclick = function () {
+            counter--;
+            console.log(counter + "px")
+            document.getElementById("mybox").style.fontSize = counter + "px"
+        }
+        document.getElementById("color").oninput = function () {
+            let color = document.getElementById("color").value;
+            console.log(color);
+            document.getElementById("mybox").style.backgroundColor = color;
+        }
+        document.getElementById("range").oninput = function () {
+            document.getElementById("mybox").style.fontSize = this.value + "px";
+        }
+
+        document.getElementById('select').onchange = function () {
+            let selectedDomain = document.getElementById('select').value;
+            let paragraphs = {
+                React: document.getElementById('paraReact'),
+                Django: document.getElementById('paraDjango'),
+                Angular: document.getElementById('paraAngular'),
+                Aws: document.getElementById('paraAws')
+            };
+            Object.values(paragraphs).forEach(p => p.classList.add('hidden'));
+            if (selectedDomain) {
+        paragraphs[selectedDomain].classList.remove('hidden');
+    }
+}
+    </script>
+</body>
+
+</html>

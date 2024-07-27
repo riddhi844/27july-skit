@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text_area</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f5;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #text-display {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #000000;
+            width: 70%;
+            margin: auto;
+            font-weight: bold;
+
+        }
+
+        #text-display span {
+            display: block;
+            margin-top: 50px;
+        }
+
+        .property-input {
+            margin: 50px;
+        }
+
+        button {
+            margin: 90px;
+            border: 2px solid #000000;
+            padding: 10px;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <textarea id="user-text" rows="4" cols="50" placeholder="Enter your text here"></textarea><br>
+    <div class="property-input">
+        <label for="text-color">Text Color:</label>
+        <input type="text" id="text-color" value="black" placeholder="Enter text color">
+    </div>
+    <div class="property-input">
+        <label for="bg-color">Background Color:</label>
+        <input type="text" id="bg-color" value="" placeholder="Enter background color">
+    </div>
+    <div class="property-input">
+        <label for="font-size">Font Size (px):</label>
+        <input type="number" id="font-size" value="" placeholder="Enter text size">
+    </div>
+
+    <div id="text-display">
+        <span id="styled-text"></span>
+    </div>
+    
+    <div class="count" id ="lc">
+    <p></p>Total letters: 0</p>
+    </div>
+    
+
+
+    <script>
+
+
+            document.getElementById("user-text").oninput = function () {
+                let text = document.getElementById("user-text").value;
+                document.getElementById("text-display").innerText = text;
+            };
+
+            document.getElementById("lc").textContent = letterCount;
+            letterCount.textContent = "Total letters: " + text.length;
+
+            var textColor = document.getElementById("text-color").value;
+            var bgColor = document.getElementById("bg-color").value;
+            var fontSize = document.getElementById("font-size").value;
+
+            var textDisplay = document.getElementById("text-display");
+            var styledText = document.getElementById("styled-text");
+            var letterCount = document.getElementById("letter-count");
+
+            styledText.textContent = text;
+            styledText.style.color = textColor;
+            textDisplay.style.backgroundColor = bgColor;
+            styledText.style.fontSize = fontSize + "px";
+
+            // letterCount.textContent = "Total letters: " + text.length;
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+        }
+
+        textarea {
+            height: 400px;
+            width: 400px;
+            padding: 0px;
+            border: 2px solid black;
+         }
+        .inp{
+        margin:4px;
+        padding:15px; 
+        width:80%;
+        }
+        .input
+        {
+            width: 400px;
+            height: 450px;
+            margin: 3px;
+            border: 2px solid black; 
+    
+             
+        }
+        .img{
+            width:150px;
+            height:150px;
+            border: 2px solid black;
+            border-radius:200px ;
+            margin:65px;
+        }
+        .output{
+            width: 600px;
+            height: 300px;
+            margin: 3px;
+            border: 2px solid black;
+            display:flex;
+            background-color: rgb(136, 133, 133);
+        }
+        label
+        {
+            font-size: 18px;
+            margin:4px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="input" id="inp">
+        <label >Image :</label> <br />
+        <input type="text" class="inp"  id="inp1" placeholder="enter image url" /> <br />
+        <label>Name:</label>
+        <input type="text" class="inp"  id="inp2" placeholder="enter your name" /><br />
+        <label>Email :</label>
+        <input type="email" class="inp"  id="inp3" placeholder="enter your Email" /><br />
+        <label>Course :</label>
+        <input type="text" class="inp"  id="inp4" placeholder="enter course name" /><br />
+        <label>Mobile :</label>
+        <input type="text" class="inp"  id="inp5" placeholder="enter your phone no" /><br />
+    </div>
+    <div class="output" id="op">
+        <div class="img" id="inp0"></div>
+         <div class="list">
+            <ul class="input2">
+                <li>Name : <input type="text" class="input2"  id="inp6"/></li>
+                <li>Email : <input type="email" class="input2"  id="inp7" /></li>
+                <li>Course :<input type="text" class="input2"  id="inp8"/></li>
+                <li>Mobile :<input type="text" class="input2"  id="inp9" /></li>
+            </ul>
+         </div>
+    </div>
+
+    <script>
+    
+    document.getElementById("inp1").oninput = function () {
+        let imgURL = document.getElementById("inp1").value;
+        document.getElementById("inp0").style.backgroundImage = `url(${imgURL})`;
+    };
+
+    document.getElementById("inp2").oninput = function () {
+        let name = document.getElementById("inp2").value;
+        document.getElementById("inp6").value = name;
+    };
+
+    document.getElementById("inp3").oninput = function () {
+        let email = document.getElementById("inp3").value;
+        document.getElementById("inp7").value = email;
+    };
+
+ 
+    document.getElementById("inp4").oninput = function () {
+        let course = document.getElementById("inp4").value;
+        document.getElementById("inp8").value = course;
+    };
+
+    document.getElementById("inp5").oninput = function () {
+        let mobile = document.getElementById("inp5").value;
+        document.getElementById("inp9").value = mobile;
+    };
+</script>
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            box-sizing: border-box;
+            justify-content: space-around;
+        }
+
+        .container {
+            width: 800px;
+            height: 500px;
+            box-sizing: border-box;
+            border: 3px solid black;
+            padding: 50px;
+            margin: auto;
+            justify-content: center;
+        }
+
+        .inp {
+            margin: 4px;
+            padding: 17px;
+            width: auto;
+            height: 2px;
+            border: 2px solid black;
+
+        }
+
+        .box {
+            border: 2px solid black;
+            width: 145px;
+            height: 145px;
+            display: inline-flex;
+        }
+
+        .container2 {
+            box-sizing: border-box;
+            padding: 45px;
+            margin: auto;
+        }
+
+        .btn {
+            margin: 4px;
+            padding: 10px;
+            width: 80px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .bar {
+            justify-content: center;
+            padding: 7px 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bar">
+            <input class="inp" type="text" id="txt1" placeholder="Enter Your Color Name">
+            <input class="inp" type="number" id="txt2" placeholder="Select Your Div">
+            <button class="btn" id="btn">Submit</button>
+        </div>
+        <div class="container2">
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+            <div class="box" id="box4"></div>
+            <div class="box" id="box5"></div>
+            <div class="box" id="box6"></div>
+            <div class="box" id="box7"></div>
+            <div class="box" id="box8"></div>
+        </div>
+
+    </div>
+    <script>
+
+        document.getElementById('btn').onclick = function () {
+            let color = document.getElementById('txt1').value;
+            let boxNumber = document.getElementById('txt2').value;
+            let box = document.getElementById('box' + boxNumber);
+
+            if (box && color) {
+                box.style.backgroundColor = color;
+            } else {
+                alert('error');
+            }
+        };
+    </script>
+
+</body>
+
+</html>

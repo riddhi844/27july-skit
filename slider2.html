@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+            transform: translateY(-50%);
+            
+        }
+
+        .box {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .outer-cont {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cont {
+            min-width: 100%;
+        }
+        button.left-button {
+            left: 10px;
+        }
+
+        button.right-button{
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" box">
+        <button class="left-button"> < </button>
+                <div class="container">
+                    <div class="outer-cont">
+                        <div class="cont">
+                            <img src="https://media.gettyimages.com/id/2030700486/photo/lovely-cheerful-girl-enjoying-meal-with-family-in-a-local-japanese-restaurant-during-vacation.jpg?s=612x612&w=gi&k=20&c=Ylsx59eMBs4h6V0266Zf_HGEO_Y27S7XagvZ8cNVrLQ="
+                                alt="">
+                        </div>
+                        <div class="cont">
+                            <img src="https://media.gettyimages.com/id/2030700486/photo/lovely-cheerful-girl-enjoying-meal-with-family-in-a-local-japanese-restaurant-during-vacation.jpg?s=612x612&w=gi&k=20&c=Ylsx59eMBs4h6V0266Zf_HGEO_Y27S7XagvZ8cNVrLQ="
+                                alt="">
+                        </div>
+                        <div class="cont">
+                            <img src="https://media.gettyimages.com/id/2030700486/photo/lovely-cheerful-girl-enjoying-meal-with-family-in-a-local-japanese-restaurant-during-vacation.jpg?s=612x612&w=gi&k=20&c=Ylsx59eMBs4h6V0266Zf_HGEO_Y27S7XagvZ8cNVrLQ="
+                                alt="">
+                        </div>
+                        <div class="cont">
+                            <img src="https://media.gettyimages.com/id/2030700486/photo/lovely-cheerful-girl-enjoying-meal-with-family-in-a-local-japanese-restaurant-during-vacation.jpg?s=612x612&w=gi&k=20&c=Ylsx59eMBs4h6V0266Zf_HGEO_Y27S7XagvZ8cNVrLQ="
+                                alt="">
+                        </div>
+                        <div class="cont">
+                            <img src="https://media.gettyimages.com/id/2030700486/photo/lovely-cheerful-girl-enjoying-meal-with-family-in-a-local-japanese-restaurant-during-vacation.jpg?s=612x612&w=gi&k=20&c=Ylsx59eMBs4h6V0266Zf_HGEO_Y27S7XagvZ8cNVrLQ="
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            <button class="right-button">></button>
+    </div>
+</body>
+
+</html>

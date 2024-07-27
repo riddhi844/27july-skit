@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            display: flex;
+            align-items: center;
+        }
+        input, select {
+            margin: 5px;
+            padding: 10px;
+            font-size: 14px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="num1" oninput="calculate()">
+        <input type="number" id="num2" oninput="calculate()">
+        <select id="operation" onchange="calculate()">
+            <option value="add">Add</option>
+            <option value="sub">Minu</option>
+            <option value="mul">Mul</option>
+            <option value="div">Divide</option>
+        </select>
+    </div>
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value;
+            let result;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                console.log("Please enter valid numbers");
+                return;
+            }
+
+            switch (operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'sub':
+                    result = num1 - num2;
+                    break;
+                case 'mul':
+                    result = num1 * num2;
+                    break;
+                case 'div':
+                    result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+                    break;
+                default:
+                    console.log("Invalid operation");
+                    return;
+            }
+            console.log( result);
+        }
+    </script>
+</body>
+</html>
